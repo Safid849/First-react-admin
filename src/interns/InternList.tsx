@@ -42,7 +42,7 @@ export const InternList = () => {
             { data: { firstname, lastname, managerId, email: `${firstname.toLowerCase()}@intern.com`, department: 'Informatique', isRemunerate: false, remuneration: 0 } },
             {
                 onSuccess: () => {
-                    refresh(); // Recharge la liste de façon transparente
+                    refresh(); 
                     handleClose();
                 }
             }
@@ -71,7 +71,6 @@ export const InternList = () => {
                 </Datagrid>
             </List>
 
-            {/* Modale Formulaire Rapide (Exercice 11) */}
             <Dialog open={open} onClose={handleClose} fullWidth maxWidth="xs">
                 <DialogTitle>Ajouter un stagiaire rapide</DialogTitle>
                 <DialogContent>

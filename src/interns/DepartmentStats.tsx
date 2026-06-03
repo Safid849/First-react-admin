@@ -7,7 +7,7 @@ export const DepartmentStats = () => {
     const { total, isPending, error } = useGetList(
         'employees',
         {
-            pagination: { page: 1, perPage: 1 }, // On ne demande qu'une seule ligne (Total lu depuis les métadonnées)
+            pagination: { page: 1, perPage: 1 }, 
             sort: { field: 'id', order: 'ASC' },
             filter: { department: record?.department, active: true }
         },

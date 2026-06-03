@@ -13,14 +13,12 @@ export const InternCreate = () => {
         }
         if (!values.department) errors.department = 'Obligatoire';
         
-        // Validation Conditionnelle (Exercice 7.1)
         if (values.isRemunerate && (values.remuneration === undefined || values.remuneration === null || values.remuneration <= 0)) {
             errors.remuneration = 'La rémunération est obligatoire si le stagiaire est rémunéré';
         }
         return errors;
     };
 
-    // Composant interne pour appliquer le filtrage des managers par rapport au département saisi
     const FilteredManagerInput = () => {
         const currentDepartment = useWatch({ name: 'department' });
         return (

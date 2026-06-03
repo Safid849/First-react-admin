@@ -8,6 +8,10 @@ const employeeFilters = [
         { id: 'Marketing', name: 'Marketing' },
         { id: 'RH', name: 'RH' },
         { id: 'Finance', name: 'Finance' },
+    ]} />,
+    <SelectInput source="active" label="Statut" choices={[
+        { id: true, name: 'Actif' },
+        { id: false, name: 'Inactif' },
     ]} />
 ];
 
@@ -21,7 +25,6 @@ export const EmployeeList = () => (
             <NumberField source="salary" label="Salaire" options={{ style: 'currency', currency: 'EUR' }} />
             <BooleanField source="active" label="Actif" />
             <QuickStatusToggle />
-            
             <EditButton />
             <DeleteButton />
         </Datagrid>

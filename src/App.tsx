@@ -5,7 +5,7 @@ import { EmployeeCreate } from './employees/EmployeeCreate';
 import { EmployeeEdit } from './employees/EmployeeEdit';
 import { EmployeeShow } from './employees/EmployeeShow';
 
-import { InternList } from './interns/internList';
+import { InternList } from './interns/InternList';
 import { InternCreate } from './interns/InternCreate';
 import { InternEdit } from './interns/InternEdit';
 import { InternShow } from './interns/InternShow';

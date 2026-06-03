@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 
-// Composant visuel de carte rendu cliquable grâce à react-router-dom
 const CardUI = ({ 
     title, 
     value, 
@@ -23,7 +22,7 @@ const CardUI = ({
             padding: '10px', 
             textAlign: 'center', 
             height: '100%', 
-            textDecoration: 'none', // Supprime le soulignement du lien
+            textDecoration: 'none', 
             display: 'block',
             transition: 'transform 0.2s, box-shadow 0.2s',
             cursor: 'pointer'
@@ -46,21 +45,18 @@ const CardUI = ({
 );
 
 export const Dashboard = () => {
-    // 1. Un seul appel pour les employés (Évite les collisions de re-rendus sous React 19)
     const { data: employees, isPending: pendingEmp } = useGetList('employees', {
         pagination: { page: 1, perPage: 100 },
         sort: { field: 'id', order: 'ASC' },
         filter: {}
     });
 
-    // 2. Un seul appel pour les stagiaires
     const { data: interns, isPending: pendingInt } = useGetList('interns', {
         pagination: { page: 1, perPage: 100 },
         sort: { field: 'id', order: 'ASC' },
         filter: {}
     });
 
-    // 3. Calculs locaux instantanés en mémoire
     const totalEmployees = employees ? employees.length : 0;
     const activeEmployees = employees ? employees.filter(e => e.active === true).length : 0;
     
@@ -75,7 +71,6 @@ export const Dashboard = () => {
                 Tableau de Bord RH
             </Typography>
 
-            {/* Boutons d'actions rapides (Créations) */}
             <Box sx={{ display: 'flex', gap: 2, marginBottom: '30px' }}>
                 <Button
                     variant="contained"
@@ -99,7 +94,6 @@ export const Dashboard = () => {
                 </Button>
             </Box>
             
-            {/* Grille Flexbox contenant les Cartes de Statistiques Cliquables */}
             <Box 
                 sx={{ 
                     display: 'flex', 
@@ -111,7 +105,6 @@ export const Dashboard = () => {
                     }
                 }}
             >
-                {/* Redirige vers la liste complète des employés */}
                 <CardUI 
                     title="Total Employés" 
                     value={totalEmployees} 
@@ -119,7 +112,6 @@ export const Dashboard = () => {
                     to="/employees" 
                 />
 
-                {/* Redirige vers la liste des employés en appliquant le filtre "active: true" */}
                 <CardUI 
                     title="Employés Actifs" 
                     value={activeEmployees} 
@@ -127,7 +119,6 @@ export const Dashboard = () => {
                     to={`/employees?filter=${encodeURIComponent(JSON.stringify({ active: true }))}`} 
                 />
 
-                {/* Redirige vers la liste complète des stagiaires */}
                 <CardUI 
                     title="Total Stagiaires" 
                     value={totalInterns} 
