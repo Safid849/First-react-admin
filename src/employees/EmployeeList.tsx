@@ -1,14 +1,5 @@
-import { 
-    List, 
-    Datagrid, 
-    TextField, 
-    NumberField, 
-    BooleanField, 
-    EditButton, 
-    DeleteButton,
-    SearchInput,
-    SelectInput
-} from 'react-admin';
+import { List, Datagrid, TextField, NumberField, BooleanField, EditButton, DeleteButton, SearchInput, SelectInput } from 'react-admin';
+import { QuickStatusToggle } from '../interns/QuickStatusToggle';
 
 const employeeFilters = [
     <SearchInput source="q" alwaysOn />,
@@ -27,12 +18,10 @@ export const EmployeeList = () => (
             <TextField source="lastname" label="Nom" />
             <TextField source="email" label="Email" />
             <TextField source="department" label="Département" />
-            <NumberField 
-                source="salary" 
-                label="Salaire" 
-                options={{ style: 'currency', currency: 'EUR' }} 
-            />
+            <NumberField source="salary" label="Salaire" options={{ style: 'currency', currency: 'EUR' }} />
             <BooleanField source="active" label="Actif" />
+            <QuickStatusToggle />
+            
             <EditButton />
             <DeleteButton />
         </Datagrid>

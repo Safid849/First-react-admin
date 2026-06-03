@@ -7,7 +7,7 @@
       "email": "alice@company.com",
       "department": "Informatique",
       "salary": 2800,
-      "active": true
+      "active": false
     },
     {
       "id": "2",
@@ -16,7 +16,7 @@
       "email": "bob@company.com",
       "department": "Marketing",
       "salary": 2500,
-      "active": true
+      "active": false
     },
     {
       "id": "3",
@@ -28,6 +28,15 @@
       "active": false
     },
     {
+      "id": "4",
+      "firstname": "David",
+      "lastname": "Lefebvre",
+      "email": "david@company.com",
+      "department": "Finance",
+      "salary": 3100,
+      "active": true
+    },
+    {
       "id": "5",
       "firstname": "Emma",
       "lastname": "Perrin",
@@ -35,16 +44,48 @@
       "department": "Informatique",
       "salary": 2900,
       "active": true
-    },
-    {
-      "firstname": "Bonie",
-      "lastname": "Bennet",
-      "email": "boniebennet@gmail.com",
-      "department": "Finance",
-      "salary": 3200,
-      "active": true,
-      "id": "NKEvR6EpTNY"
     }
   ],
-  "$schema": "./node_modules/json-server/schema.json"
+  "interns": [
+    {
+      "id": "1",
+      "firstname": "Lucas",
+      "lastname": "Dubois",
+      "email": "lucas@intern.com",
+      "department": "Informatique",
+      "isRemunerate": true,
+      "remuneration": 600,
+      "managerId": "1"
+    },
+    {
+      "id": "2",
+      "firstname": "Mathéo",
+      "lastname": "Thomas",
+      "email": "matheo@intern.com",
+      "department": "Marketing",
+      "isRemunerate": false,
+      "remuneration": 0,
+      "managerId": "2"
+    },
+    {
+      "id": "3",
+      "firstname": "Léa",
+      "lastname": "Robert",
+      "email": "lea@intern.com",
+      "department": "Informatique",
+      "isRemunerate": true,
+      "remuneration": 650,
+      "managerId": "1"
+    },
+    {
+      "id": "4",
+      "firstname": "Chloé",
+      "lastname": "Richard",
+      "email": "chloe@intern.com",
+      "department": "Finance",
+      "isRemunerate": true,
+      "remuneration": 700,
+      "managerId": "4"
+    }
+  ]
 }
